@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>PokeGame</title>
+  <link href="https://fonts.googleapis.com/css?family=Joti+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+  <!--  Styles  -->
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+
+<div id="game-div">
+	<div id="stats">
+		<h1>Points: <span id="points">0</span></h1>
+		<h1>Round: <span id="rounds">0</span>/10</h1>
+	</div>
+
+	<div id="mDiv">
+
+	</div>
+</div>
+
+<div  id="menu-title" >
+    <div class="titlebg">
+        <h1 id="mTitle">Who's that <br><span class="pokemon-header">POKEMON?</span></h1>
+    </div>
+	<h2 class="pokeHeaders">PRESS ANY KEY TO START</h2>
+</div>
+
+<div id="sTitle">
+	<div id="tabs">
+		<div id="tab-1" class="tabs">
+			<h2>PLAY NOW</h2>
+		</div>
+		<div id="tab-2" class="tabs">
+			<h2>POKEMON FOUND</h2>
+		</div>
+	</div>
+</div>
+
+<div id="gPick">
+	<div id="row_1" class="row">
+		<div class="gen-box" id="gen-1">
+			<h3>GEN 1</h3>
+		</div>
+		<div class="gen-box" id="gen-2">
+			<h3>GEN 2</h3>
+		</div>
+	</div>
+	<div id="row_2" class="row">
+		<div class="gen-box" id="gen-3">
+			<h3>GEN 3</h3>
+		</div>
+		<div class="gen-box" id="gen-4">
+			<h3>GEN 4</h3>
+		</div>
+	</div>
+</div>
+
+<div id="oMenu">
+</div>
+
+<div id="pokemon-details">
+	<div class="details-con">
+		<h2 id="pokemon-name"></h2>
+	</div>
+
+	<img id="pokedex_image" src="">
+	<div class="details-con">
+		<h2 id="pokemon-num"></h2>
+	</div>
+	<button class="back-btn">Back to menu</button>
+</div>
+
+<div id="pokemon-found">
+  <button class="back-btn" id="back-btn-1">Back to menu</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+
+</html>

@@ -13,7 +13,15 @@ body {
 h1 {
     text-transform: uppercase;
     text-align: center;
-    font-size: 54px;
+    font-size: 58px;
+    font-family: 'Joti One', cursive;
+	color: #FFCB04;
+	text-shadow:
+		3px 3px 0 #39569E,
+		-1px -1px 0 #39569E,
+		1px -1px 0 #39569E,
+		-1px 4px 0 #39569E,
+		1px 1px 0 #39569E;
 }
 
 #pokedex {

@@ -25,9 +25,10 @@ h1 {
 
 .card {
     list-style: none;
-    padding: 40px;
+    padding: 80px;
     background-color: #f4f4f4;
     color: #222;
+    border-radius: 20px;
     text-align: center;
 }
 
@@ -36,12 +37,14 @@ h1 {
     cursor: pointer;
 }
 
-.card-title {
+.card-desc {
     text-transform: capitalize;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+    padding: 5px 30px;
     font-size: 32px;
     font-weight: normal;
 }
+
 .card-subtitle {
     margin-top: 5px;
     color: #666;
@@ -50,6 +53,17 @@ h1 {
 
 .card-image {
     height: 180px;
+}
+
+
+.card-type {
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    font-size: 25px;
+    font-weight: normal;
+    background-color: gray;
+    padding: 10px 20px;  
+    border-radius: 10px;
 }
 
 @keyframes bounce {
@@ -74,8 +88,7 @@ h1 {
     left: 0;
     height: 100vh;
     width:100vw;
-    background: #f4f4f4;
-    opacity: 0.95;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,15 +98,6 @@ h1 {
     position: absolute;
     top: 20px;
     right: 20px;
-}
-
-button{
-    background-color: orangered;
-    padding: 10px 20px;
-    border: none;
-    color: white;
-    border-radius: 3px;
-    transition: transform 100ms;
 }
 
 button:hover{

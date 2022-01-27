@@ -1,8 +1,7 @@
 const pokedex = document.getElementById('pokedex');
 const pokeCache = {};
 const fetchPokemon = async () => {
-    const url = `https://pokeapi.co/api/v2/pokemon?
-    limit=150`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
     const res = await fetch(url);
     const data = await res.json();
     const pokemon = data.results.map( (result, index) =>({
@@ -11,12 +10,9 @@ const fetchPokemon = async () => {
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
         apiURL: result.url
     }));
-
+    console.log(pokemon)
     displayPokemon(pokemon);
 };
-
-
-
 
 const displayPokemon = (pokemon) => {
     const pokemonHTMLString = pokemon
@@ -37,18 +33,20 @@ const selectPokemon = async (id) => {
     if(!pokeCache[id]){
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
         const res = await fetch(url);
-        const pokeman = await res.json();
-        pokeCache[id] = pokeman;
-        displayPopup(pokeman);
+        const pkmn = await res.json();
+        pokeCache[id] = pkmn;
+        displayPopup(pkmn);
     }
-    displayPopup(pokeCache[id]); 
+    else{
+        displayPopup(pokeCache[id]);
+    } 
     
 };
 
-const displayPopup = (pokeman) => {
-    const type = pokeman.types.map((type) =>
+const displayPopup = (pkmn) => {
+    const type = pkmn.types.map((type) =>
     type.type.name).join(', ');
-    const image = pokeman.sprites['front_default'];
+    const image = pkmn.sprites['front_default'];
     const htmlString =
     `
     <div class="popup">
@@ -56,14 +54,13 @@ const displayPopup = (pokeman) => {
         ">Close</button>
         <div class="card">
             <img class="card-image" src="${image}"/>
-            <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-            <p><small>Height: </small>${pokeman.height} | <small>Weight: </small>${pokeman.weight} | <small>
+            <h2 class="card-title">${pkmn.id}. ${pkmn.name}</h2>
+            <p><small>Height: </small>${pkmn.height} | <small>Weight: </small>${pkmn.weight} | <small>
             <small>Type: </small>${type}
         </div>
     </div>`;
     
-    pokedex.innerHTML = htmlString + pokedex.innerHTML;
-    console.log(htmlString); 
+    pokedex.innerHTML = pokedex.innerHTML + htmlString;
 };
 
 const closePopup = () => {

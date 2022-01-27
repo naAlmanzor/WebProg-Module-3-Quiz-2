@@ -7,7 +7,7 @@ const fetchPokemon = async () => {
     const data = await res.json();
     const pokemon = data.results.map( (result, index) =>({
         ... result,
-        id: '#'+ (index + 1),
+        id: index + 1,
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
         apiURL: result.url
     }));
@@ -25,14 +25,13 @@ const displayPokemon = (pokemon) => {
             <img class="card-image" src="${pkmn.image}"/>
            
             <h2 class="card-desc">${pkmn.name}</h2>
-            <h2>${pkmn.id}</h2>
+            <h2>#${pkmn.id}</h2>
         </li>`
         )
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
 
     const id = document.getElementById("id");
-    // id.style.fontSize='20px';
 };
 
 const selectPokemon = async (id) => {

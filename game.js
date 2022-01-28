@@ -26,106 +26,48 @@ function startGame() {
 		document.body.removeEventListener('click', startMenu);
 	}
 
-	var btnFunc = function() {
-		document.querySelectorAll('html')[0].style.overflow = 'hidden';
-		document.querySelectorAll('body')[0].style.overflow = 'hidden';
-		document.querySelectorAll('html')[0].style.height = '100%';
-		var parent = this.parentElement.getAttribute("id")
-		document.querySelector('#' + parent).style.display = 'none'
-		sTitle.style.display = 'flex'
-	};
-
-	var tabFunc = function() {
-		var id = this.getAttribute("id").match(/\d+/)[0];
-
-		if (id === '1') {
-			sTitle.style.display = 'none'
-			genPick.style.display = 'flex'
-
-			var gBox = document.querySelectorAll('.gen-box');
-			var test;
-			var gameMode = function() {
-				// Removes event listeners after use
-				for (var i = 0; i < tabs.length; i++) {
-					tabs[i].removeEventListener('click', tabFunc);
-				}
-
-				for (var gb = 0; gb < gBox.length; gb++) {
-					gBox[gb].removeEventListener('click', gameMode);
-				}
-				test = true;
-				var gMode = this.getAttribute("id");
-				genPick.style.display = 'none';
-				gDiv.style.display = 'unset';
-				switch(gMode) {
-					case 'gen-1':
-						gen = [0, 151]; //151
-						whomstThatPokemon();
-						break
-					case 'gen-2':
-						gen = [151, 251];
-						whomstThatPokemon();
-						break
-					case 'gen-3':
-						gen = [251, 386];
-						whomstThatPokemon();
-						break
-					case 'gen-4':
-						gen = [386, 493];
-						whomstThatPokemon();
-						break
-					default:
-						alert('Error!');
-				}
-			}
-
-
-			// Add click event(s) to the gen-box(s)
-			for (var gb = 0; gb < gBox.length; gb++) {
-				gBox[gb].addEventListener('click', gameMode);
-			}
-
-		} else if (id === '2') {
-			pDiv.innerHTML = '';
-			pDiv.insertAdjacentHTML('beforeend', '<button class="back-btn" id="back-btn-1">Back to menu</button>');
-			oMenu.style.display = 'none'
-			sTitle.style.display = 'none'
-			pDiv.style.display = 'flex'
-			document.querySelectorAll('html')[0].style.overflow = 'unset';
-			document.querySelectorAll('body')[0].style.overflow = 'unset';
-			// Create the grid
-			// Get the amount of pokemon found
-			var pFound = pokemonStorage.length;
-
-			// How many rows to make
-			var rCount = Math.round(pFound / 2)
-			var count = 0;
-			for (var cGrid = 0; cGrid < rCount; cGrid++) {
-					pDiv.insertAdjacentHTML('beforeend', `<div id=${"fRow_" + cGrid} class="row"></div>`);
-					for (var cBox = 0; cBox < 2; cBox++) {
-						pDiv.querySelector("#fRow_" + cGrid).insertAdjacentHTML('beforeend', `<div class="pok-box" id=${'gBox-' + count}></div>`);
-						count++;
-					}
-			}
-
-			for (var genPoke = 0; genPoke < pFound; genPoke++) {
-				pDiv.querySelector('#gBox-' + genPoke).insertAdjacentHTML('beforeend', `<img class="pokeImage" src=${"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemonStorage[genPoke] + ".png"}>`);
-			}
-
-			var btns = document.querySelectorAll('.back-btn');
-			for (var x = 0; x < btns.length; x++) {
-				btns[x].addEventListener('click', btnFunc);
-			}
-
-		} else {
-			alert('Error!')
+	genPick.style.display = 'flex'
+	var gBox = document.querySelectorAll('.gen-box');
+	var test;
+	var gameMode = function() {
+		// Removes event listeners after use
+		for (var i = 0; i < tabs.length; i++) {
+			tabs[i].removeEventListener('click', tabFunc);
 		}
 
+		for (var gb = 0; gb < gBox.length; gb++) {
+			gBox[gb].removeEventListener('click', gameMode);
+		}
+		test = true;
+		var gMode = this.getAttribute("id");
+		genPick.style.display = 'none';
+		gDiv.style.display = 'unset';
+		switch(gMode) {
+			case 'gen-1':
+				gen = [0, 151]; //151
+				whomstThatPokemon();
+				break
+			case 'gen-2':
+				gen = [151, 251];
+				whomstThatPokemon();
+				break
+			case 'gen-3':
+				gen = [251, 386];
+				whomstThatPokemon();
+				break
+			case 'gen-4':
+				gen = [386, 493];
+				whomstThatPokemon();
+				break
+			default:
+				alert('Error!');
+		}
 	}
 
 
-	for (var i = 0; i < tabs.length; i++) {
-		tabs[i].addEventListener('click', tabFunc);
+	// Add click event(s) to the gen-box(s)
+	for (var gb = 0; gb < gBox.length; gb++) {
+		gBox[gb].addEventListener('click', gameMode);
 	}
 
 	document.body.addEventListener('keypress', startMenu);

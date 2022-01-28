@@ -265,5 +265,6 @@ function changeColor(){
     
 }
 
+
 fetchPokemon();
 

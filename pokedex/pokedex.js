@@ -30,8 +30,6 @@ const displayPokemon = (pokemon) => {
         )
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
-
-    const id = document.getElementById("id");
 };
 
 const selectPokemon = async (id) => {
@@ -264,7 +262,6 @@ const closePopup = () => {
 function changeColor(){
     
 }
-
 
 fetchPokemon();
 

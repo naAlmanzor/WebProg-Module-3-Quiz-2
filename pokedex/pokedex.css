@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: orangered;
     color: white;
@@ -54,15 +58,9 @@ h1 {
     /* align-items: center; */
 }
 
-.card-subtitle {
-    margin-top: 5px;
-    color: #666;
-    font-weight: lighter;
-}
-
 .card-image {
     height: 200px;
-    background-image: url('assets/pokeball.png');
+    background-image: url('../assets/pokeball.png');
     background-repeat: no-repeat;
     background-position: center ;
 }

@@ -108,6 +108,10 @@ function startGame() {
 					}
 			}
 
+			for (var genPoke = 0; genPoke < pFound; genPoke++) {
+				pDiv.querySelector('#gBox-' + genPoke).insertAdjacentHTML('beforeend', `<img class="pokeImage" src=${"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemonStorage[genPoke] + ".png"}>`);
+			}
+
 			var btns = document.querySelectorAll('.back-btn');
 			for (var x = 0; x < btns.length; x++) {
 				btns[x].addEventListener('click', btnFunc);

@@ -38,7 +38,7 @@ html, body {
 
 body {
     background: #a40606;
-    background: linear-gradient(to bottom, #a40606 0%, #d98324 74%);
+    background: linear-gradient(to bottom, #a40606 0%, #ee740f 80%);
 	margin: 0px;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 #tabs {
-	width: 100%;
+	width: 40%;
 }
 
 .tabs {
@@ -124,6 +124,30 @@ body {
 	align-items: stretch;
 	width: 100%;
 	flex: 1;
+}
+
+.g1-bg{
+	background-image: url('assets/gen-1.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.g2-bg{
+	background-image: url('assets/gen-2.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.g3-bg{
+	background-image: url('assets/gen-3.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.g4-bg{
+	background-image: url('assets/gen-4.png');
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .gen-box {

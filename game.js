@@ -246,7 +246,7 @@ function getThatPokemon(pokemonCount) {
 				  }
 				],
 				{
-					duration: 3000,
+					duration: 1500,
 					iterations: 1
 				}
 				);
@@ -262,7 +262,7 @@ function getThatPokemon(pokemonCount) {
 							{ transform: 'rotate(-20deg)'},
 							{ transform: 'rotate(0)'}
 						], {
-							duration: 3000,
+							duration: 1500,
 						}
 					);
 
@@ -280,8 +280,8 @@ function getThatPokemon(pokemonCount) {
 
 				}
 
-				setTimeout(aAnim, 3000);
-				setTimeout(whomstThatPokemon, 8000);
+				setTimeout(aAnim, 1450);
+				setTimeout(whomstThatPokemon, 4000);
 			}
 
 			mButton.addEventListener("click", getInput);

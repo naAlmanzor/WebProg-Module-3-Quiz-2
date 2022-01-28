@@ -81,7 +81,7 @@ header{
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 1px;
-    margin-top: 20px;
+    margin: 20px 10px;
     display: inline-block;
     color:#fff;
 }
